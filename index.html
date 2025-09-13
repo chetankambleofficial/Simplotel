@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Document</title>
+    <style>
+        * ,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background: linear-gradient(to right, #FFF6AD, #FFAAF7);
+        }
+        nav {
+            background-color: #FF7070;
+            height: 10vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-family: 'Times New Roman', serif;
+            padding: 0 10vw;
+            position: relative;
+        }
+        nav img {
+            height: 40px;
+            width: 40px;
+            cursor: pointer;
+        }
+        nav .nav-links {
+            display: flex;
+            justify-content: space-around;
+            width: 60vw;
+        }
+        nav .nav-links a {
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            letter-spacing: 3px;
+            font-weight: 900;
+            padding-left: 3vw;
+        }
+        .hero {
+            height: 93vh;
+            display: flex;
+        }
+        div .child1 {
+            width: 50vw;  /* FIX overlap */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 70px;
+            font-size: clamp(14px, 2vw, 20px);
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        div .child1 p {
+            padding-bottom: 5vh;
+            width: 45vw;
+            line-height: 35px;
+        }
+        div .child1 .p1 {
+            letter-spacing: 10px;
+            font-size: clamp(24px, 6vw, 60px);
+            font-weight: 700;
+        }
+        div .child1 button {
+            background-color: #FF7070;
+            width: clamp(150px, 20vw, 250px);
+            padding: 15px 20px;
+            border: none;
+            color: white;
+            font-weight: 200;
+            font-size: clamp(14px, 2vw, 18px);
+            cursor: pointer;
+        }
+        div .child2 {
+            width: 50vw;  /* FIX overlap */
+            background: url(pexels-robin-stickel-70497.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 60%;
+        }
+
+   
+        .content {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            max-width: 1200px;
+        }
+        .grid-container {
+            display: grid;
+            padding-left: 100px;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .left {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 15px;
+        }
+        .right {
+            grid-row: span 2;
+        }
+        .grid-container img {
+            width: 20vw;
+            height: 30vh;
+            object-fit: cover;
+        }
+        .right img {
+            height: 62vh;
+        }
+        .child3 {
+            width: 60vw;
+            padding: 10px;
+        }
+        .child4 {
+            width: 50vw;
+        }
+        .text-box {
+            background: #ff6f61;
+            color: black;
+            padding: 30px;
+            width: 30vw;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .text-box h5 {
+            font-weight: 500;
+            font-size: clamp(12px, 2vw, 14px);
+            margin: 0 0 10px;
+            letter-spacing: 2px;
+            padding-bottom: 30px;
+        }
+        .text-box h1 {
+            font-size: clamp(20px, 5vw, 50px);
+            margin: 0 0 20px;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: 4px;
+            padding-bottom: 20px;
+        }
+        .text-box a {
+            font-size: clamp(12px, 2vw, 16px);
+            text-decoration: none;
+            color: black;
+            font-weight: 400;
+        }
+        .arrowbutton {
+            display: flex;
+            align-items: center;
+        }
+        .arrowbutton img {
+            padding-left: 10px;
+            height: 25px;
+            width: 25px;
+        }
+
+     
+        @media (max-width: 768px) {
+            nav {
+                padding-left: 3vw;
+                padding-right: 3vw;
+                font-size: 18px;
+            }
+            .hero {
+                flex-direction: column;
+                height: auto;
+            }
+            .child1,
+            .child2 {
+                width: 100vw;
+                padding: 30px 25px;
+            }
+            div .child1{
+                order: 2;
+                width:100vw;
+            }
+             div .child1 .p1{
+                width:100vw;
+            }
+            div .child1 p{
+                width:70vw;
+            }
+            div .child2{
+                order:1;
+                width:95vw;
+                height:20vh;
+            }
+            .content {
+                flex-direction: column;
+                gap: 15px;
+                max-width: 100vw;
+                height: auto;
+            }
+            .grid-container {
+                grid-template-columns: 1fr;
+                padding-left: 2vw;
+                gap: 8px;
+            }
+            .grid-container img,
+            .right img {
+                width: 92vw;
+                height: 18vh;
+            }
+            .child3,
+            .child4 {
+                width: 100vw;
+                padding: 0;
+            }
+            .text-box {
+                width: 100vw;
+                font-size: 13px;
+                padding: 10px;
+            }
+            .arrowbutton img {
+                height: 18px;
+                width: 18px;
+                padding-left: 5px;
+            }
+        }
+
+    
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                width: 100%;
+                padding: 14px 0;
+                position: relative;
+            }
+            nav img {
+                height: 28px;
+                width: 28px;
+                cursor: pointer;
+            }
+            nav .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #FF7070;
+                position: absolute;
+                top: 8vh;
+                width: 100%;
+                left: 0;
+                padding: 10px 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+            nav .nav-links a {
+                padding: 12px 0;
+                text-align: center;
+                font-weight: 700;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                color: black;
+                text-decoration: none;
+                font-size: 14px;
+                letter-spacing: 1px;
+            }
+            nav .nav-links.show {
+                display: flex;
+                animation: slideDown 0.3s ease forwards;
+            }
+        }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #444;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      nav ul.show {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+
+      .hero {
+        flex-direction: column;
+      }
+      .child2 {
+        order: 1;
+        width: 100%;
+        height: 300px;
+      }
+      .child1 {
+        order: 2;
+        padding: 40px;
+      }
+
+      .content {
+        flex-direction: column;
+        padding: 40px;
+      }
+
+      .grid-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+        /* ---------------- ANIMATION ---------------- */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/">Order</a>
+            <a href="/">Food</a>
+            <a href="/">Restaurant</a>
+            <a href="/">Testimonials</a>
+            <a href="/">Contact Us</a>
+        </div>
+        <img src="menu-bar.png" id="menu-toggle" alt="menu" />
+    </nav>
+
+    <div class="hero">
+        <div class="child1">
+            <p class="p1" style="padding-bottom: 7vh;">LOREM IPSUM</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore pariatur molestias, ad repellendus impedit veniam iusto aut inventore tempore vel velit eligendi ipsam laboriosam reiciendis reprehenderit commodi nesciunt tempora eum amet. Nobis est voluptas magni accusamus voluptates, sapiente id mollitia? Lorem ipsum dolor sit amet. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi, odit.</p>
+            <button style="margin-top: 5vh;">Click Me</button>
+        </div>
+        <div class="child2"></div>
+    </div>
+
+    <div class="content">
+        <div class="child3">
+            <div class="grid-container">
+                <div class="left">
+                    <img src="pexels-rachel-claire-6752433.jpg" alt="Image 1" />
+                    <img src="pexels-eva-bronzini-6141651.jpg" alt="Image 2" />
+                </div>
+                <div class="right">
+                    <img src="pexels-mister-mister-3434523.jpg" alt="Image 3" />
+                </div>
+            </div>
+        </div>
+
+        <div class="child4">
+            <div class="text-box">
+                <h5>LOREM IPSUM</h5>
+                <h1>LOREM IPSUM<br />SET ADEMIR</h1>
+                <div class="arrowbutton">
+                    <a href="/">Click </a>
+                    <img src="icons8-arrow-30.png" alt="arrow" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.querySelector('.nav-links').classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
